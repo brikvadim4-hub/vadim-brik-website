@@ -30,12 +30,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;display
 .final-cta{padding:8rem 3rem;text-align:center;position:relative;overflow:hidden;background:var(--bg)}.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 60%);pointer-events:none}.final-cta::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
 .legal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,5,5,.96);overflow-y:auto;padding:5rem 2rem}.legal.show{display:block}.legal-x{position:fixed;top:1.5rem;right:2rem;font-size:1.5rem;color:var(--text2);cursor:pointer;z-index:2001;background:none;border:none;font-family:var(--bd);transition:color .3s}.legal-x:hover{color:var(--text)}.legal-body{max-width:700px;margin:0 auto}.legal-body h1{font-family:var(--hd);font-size:2rem;color:var(--text);margin-bottom:2rem}.legal-body h2{font-family:var(--hd);font-size:1.2rem;color:var(--text);margin-top:2rem;margin-bottom:.8rem}.legal-body p{font-size:.82rem;color:var(--text2);line-height:1.7;margin-bottom:.8rem}
 footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.f-brand{font-family:var(--hd);font-size:.9rem;letter-spacing:.18em;color:var(--text3)}.f-brand b{color:var(--accent);font-weight:400}.f-links{display:flex;gap:1.8rem}.f-links a{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);text-decoration:none;cursor:pointer;transition:color .3s}.f-links a:hover{color:var(--text2)}
+/* LIGHT SECTIONS — WARM CHAMPAGNE GOLD */
+.light{background:linear-gradient(180deg,var(--bg) 0%,#D4C5A3 8%,#E0D2B2 50%,#D4C5A3 92%,var(--bg) 100%);position:relative;padding:7rem 3rem}
+.light .sec-label{color:#8A7345}.light .sec-title{color:#1A1A18}.light .sec-sub{color:#4A3F2A}
+.light .c-item{border-color:rgba(26,26,24,.12)}.light .c-item:first-child{border-color:rgba(26,26,24,.12)}.light .c-item-n{color:rgba(26,26,24,.18)}.light .c-item:hover .c-item-n{color:#8A7345}.light .c-item h3{color:#1A1A18}.light .c-item p{color:#4A3F2A}.light::before{display:none}
+.light .app-form{background:rgba(255,253,248,.6);backdrop-filter:blur(8px);border-color:rgba(26,26,24,.1);box-shadow:0 8px 40px rgba(176,146,80,.08)}.light .f-row label{color:#6A5A3A}.light .f-row input,.light .f-row select,.light .f-row textarea{background:rgba(255,253,248,.5);border-color:rgba(26,26,24,.1);color:#1A1A18}.light .f-row input::placeholder,.light .f-row textarea::placeholder{color:#9A8965}.light .f-row input:focus,.light .f-row select:focus,.light .f-row textarea:focus{border-color:#8A7345;background:rgba(255,253,248,.8)}.light .f-row select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 7L1 3h8z' fill='%239A8965'/%3E%3C/svg%3E")}.light .f-submit{background:#1A1A18;color:#F2F0ED}.light .f-note{color:#8A7345}.light .app-step-n{color:#8A7345}.light .app-step-t{color:#4A3F2A}.light .app-step-t strong{color:#1A1A18}
+.light .form-success{background:rgba(255,253,248,.7);border-color:#8A7345}.light .form-success h3{color:#8A7345}.light .form-success p{color:#4A3F2A}
+.light .faq-item{border-color:rgba(26,26,24,.12)}.light .faq-q{color:#1A1A18}.light .faq-q:hover{color:#8A7345}.light .faq-icon{color:#9A8965}.light .faq-item.open .faq-icon{color:#8A7345}.light .faq-a p{color:#4A3F2A}
+
+/* GLOW AROUND IMAGES */
+.about-img{box-shadow:0 0 100px 20px rgba(176,164,142,.25),0 0 200px 40px rgba(176,164,142,.08)}
+.tf-card{box-shadow:0 0 60px -10px rgba(176,164,142,.12)}
+.r-card img{box-shadow:0 0 40px -5px rgba(176,164,142,.1)}
+
+/* COMPARISON — COMPACT TABLE STYLE */
+.compare{padding:6rem 3rem;background:var(--bg);position:relative}.compare::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}.cmp-inner{max-width:1000px;margin:0 auto}.cmp-header{text-align:center;margin-bottom:3rem}.cmp-header .sec-sub{margin:0 auto}
+.cmp-table{border:1px solid var(--border);overflow:hidden}
+.cmp-table-head{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.cmp-head-cell{padding:1.3rem 2rem;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.cmp-head-cell.left{color:var(--text3);background:var(--bg2);border-right:1px solid var(--border)}
+.cmp-head-cell.right{color:var(--accent);background:linear-gradient(135deg,rgba(176,164,142,.1) 0%,transparent 100%)}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.cmp-row:last-child{border-bottom:none}
+.cmp-cell{padding:1.1rem 2rem;font-size:.85rem;font-weight:300;line-height:1.5;display:flex;align-items:center;gap:.7rem}
+.cmp-cell.left{color:var(--text3);background:var(--bg2);border-right:1px solid var(--border)}
+.cmp-cell.right{color:var(--text2);background:var(--bg3)}
+.cmp-cell .ic{flex-shrink:0;font-size:.7rem;width:16px}.cmp-cell.left .ic{color:var(--text4)}.cmp-cell.right .ic{color:var(--accent)}
+.cmp-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2rem;border:1px solid var(--border)}
+.cmp-stat{padding:1.3rem 1rem;text-align:center;border-right:1px solid var(--border)}.cmp-stat:last-child{border-right:none}
+.cmp-stat-val{font-family:var(--hd);font-size:1.5rem;color:var(--accent);line-height:1}
+.cmp-stat-lbl{font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.4rem}
+.cmp-cta{text-align:center;margin-top:2.5rem}
+@media(max-width:768px){.cmp-stats-row{grid-template-columns:repeat(2,1fr)}.cmp-stats-row .cmp-stat:nth-child(2){border-right:none}.cmp-stats-row .cmp-stat:nth-child(1),.cmp-stats-row .cmp-stat:nth-child(2){border-bottom:1px solid var(--border)}.cmp-head-cell,.cmp-cell{padding:.9rem 1rem;font-size:.78rem}}
+
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.rv.vis{opacity:1;transform:translateY(0)}.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
 .tf-progress{margin-top:1.2rem;border:1px solid var(--border);overflow:hidden;border-radius:2px}.tf-progress img{width:100%;display:block}.tf-progress-label{font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:.6rem .8rem;background:var(--bg)}
 .wl-success{display:none;text-align:center;padding:1.2rem;border:1px solid var(--accent-border);background:var(--accent-dim)}.wl-success p{font-size:.9rem;font-weight:500;color:var(--accent);margin:0}
 .form-success{display:none;background:var(--bg2);border:1px solid var(--accent-border);padding:2.5rem;text-align:center}.form-success h3{font-family:var(--hd);font-size:1.5rem;color:var(--accent);margin-bottom:.8rem;letter-spacing:.03em}.form-success p{font-size:.88rem;font-weight:300;color:var(--text2);line-height:1.7;margin-bottom:.5rem}.form-success a{color:var(--accent);text-decoration:none;font-weight:500}.form-success a:hover{text-decoration:underline}
 @media(max-width:1024px){.tf-card{grid-template-columns:1fr}.tf-card:nth-child(even){direction:ltr}.ba-slider{max-height:400px}.app-inner,.about-inner{grid-template-columns:1fr}.about-img{max-height:450px}}
-@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999}.nav-links.open{display:flex}.nav-links a{font-size:1rem}.mob-tog{display:block}.hero-brand{font-size:clamp(3rem,14vw,5rem)}.transformations,.coaching,.receipts,.application,.about,.programs,.faq{padding:4.5rem 1.5rem}.positioning{padding:4rem 1.5rem}.tf-card{grid-template-columns:1fr}.c-item{grid-template-columns:50px 1fr;gap:1.2rem}.app-inner{gap:2.5rem}.app-form{padding:2rem}.about-inner{gap:2rem}.wl-form{flex-direction:column}.countdown{gap:1.5rem}.final-cta{padding:5rem 1.5rem}footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}.r-card{flex:0 0 260px}}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999}.nav-links.open{display:flex}.nav-links a{font-size:1rem}.mob-tog{display:block}.hero-brand{font-size:clamp(3rem,14vw,5rem)}.transformations,.coaching,.receipts,.application,.about,.programs,.faq,.compare{padding:4.5rem 1.5rem}.positioning{padding:4rem 1.5rem}.tf-card{grid-template-columns:1fr}.c-item{grid-template-columns:50px 1fr;gap:1.2rem}.app-inner{gap:2.5rem}.app-form{padding:2rem}.about-inner{gap:2rem}.wl-form{flex-direction:column}.countdown{gap:1.5rem}.final-cta{padding:5rem 1.5rem}footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}.r-card{flex:0 0 260px}}
 </style>
 </head>
 <body>
@@ -57,7 +90,7 @@ footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-cont
 
 </div><div class="tf-cta rv"><a href="#bewerbung" class="btn btn-w">Coaching anfragen</a></div></div></section>
 
-<section class="coaching" id="coaching"><div class="c-inner"><div class="c-header rv"><div class="sec-label">So arbeiten wir zusammen</div><h2 class="sec-title">WAS DICH ERWARTET.</h2><p class="sec-sub">Jeder Plan wird von Grund auf für dich gebaut — abgestimmt auf dein Ziel, deine Schwächen und deinen Alltag.</p></div><div class="c-items">
+<section class="coaching light" id="coaching"><div class="c-inner"><div class="c-header rv"><div class="sec-label">So arbeiten wir zusammen</div><h2 class="sec-title">WAS DICH ERWARTET.</h2><p class="sec-sub">Jeder Plan wird von Grund auf für dich gebaut — abgestimmt auf dein Ziel, deine Schwächen und deinen Alltag.</p></div><div class="c-items">
 <div class="c-item rv"><div class="c-item-n">01</div><div><h3>DEIN INDIVIDUELLER PLAN</h3><p>Kein Template. Dein Training wird auf dich, deinen Alltag und dein Ziel abgestimmt. Ob Fettabbau, Muskelaufbau oder beides — der Plan passt sich an, nicht umgekehrt.</p></div></div>
 <div class="c-item rv"><div class="c-item-n">02</div><div><h3>TECHNIK & FEEDBACK</h3><p>Regelmäßige Videoanalyse deiner Übungen. Kleine Anpassungen, großer Effekt. Du lernst nicht nur was du tun sollst, sondern warum es funktioniert.</p></div></div>
 <div class="c-item rv"><div class="c-item-n">03</div><div><h3>LAUFENDE ANPASSUNG</h3><p>Dein Programm entwickelt sich mit dir. Was funktioniert wird verstärkt, was bremst wird geändert. Kein starres System — echte Steuerung in Echtzeit.</p></div></div>
@@ -73,7 +106,7 @@ footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-cont
 <div class="r-card"><img src="screenshot-giacomo.png" alt="Giacomo"><div class="r-card-info"><div class="r-card-name">Giacomo</div><div class="r-card-ctx">Powerlifting-Coaching</div></div></div>
 </div><div class="r-controls rv"><button class="r-btn" onclick="scrollR(-1)">←</button><button class="r-btn" onclick="scrollR(1)">→</button></div></div></section>
 
-<section class="application" id="bewerbung"><div class="app-inner"><div class="rv"><div class="sec-label">Coaching anfragen</div><h2 class="sec-title">LASS UNS<br>SPRECHEN.</h2><p class="sec-sub">Füll das Formular aus. Ich melde mich persönlich bei dir — kein Autoresponder, kein Chatbot, keine Warteschleife.</p><div class="app-steps">
+<section class="application light" id="bewerbung"><div class="app-inner"><div class="rv"><div class="sec-label">Coaching anfragen</div><h2 class="sec-title">LASS UNS<br>SPRECHEN.</h2><p class="sec-sub">Füll das Formular aus. Ich melde mich persönlich bei dir — kein Autoresponder, kein Chatbot, keine Warteschleife.</p><div class="app-steps">
 <div class="app-step"><div class="app-step-n">01</div><div class="app-step-t"><strong>Formular ausfüllen</strong> — Erzähl mir wo du stehst und was dein Ziel ist.</div></div>
 <div class="app-step"><div class="app-step-n">02</div><div class="app-step-t"><strong>Persönliche Rückmeldung</strong> — Innerhalb von 48 Stunden.</div></div>
 <div class="app-step"><div class="app-step-n">03</div><div class="app-step-t"><strong>Gespräch</strong> — Ehrliches Kennenlernen, kein Verkaufsgespräch.</div></div>
@@ -109,7 +142,49 @@ footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-cont
 <div class="wl-success" id="wlSuccess"><p>Du bist auf der Liste. Wir melden uns.</p></div>
 <p class="wl-note rv">Kein Spam. Eine Nachricht wenn es soweit ist.</p></div></section>
 
-<section class="faq"><div class="faq-inner"><div class="faq-header rv"><div class="sec-label">Häufige Fragen</div><h2 class="sec-title">FAQ.</h2></div>
+<!-- COMPARISON -->
+<section class="compare">
+<div class="cmp-inner">
+<div class="cmp-header rv">
+<div class="sec-label">Deine Entscheidung</div>
+<h2 class="sec-title">DU IN 6 MONATEN.</h2>
+<p class="sec-sub">Zwei Wege. Ein Unterschied. Du entscheidest welcher deiner ist.</p>
+</div>
+<div class="cmp-grid rv">
+<div class="cmp-col cmp-col-left">
+<div class="cmp-col-tag">Ohne System</div>
+<h3>GLEICHER STAND.<br>6 MONATE SPÄTER.</h3>
+<ul class="cmp-list">
+<li><span class="cmp-icon">✕</span>Kein klarer Plan — jede Woche was anderes trainiert</li>
+<li><span class="cmp-icon">✕</span>Ernährung geraten — mal mehr, mal weniger, kein System</li>
+<li><span class="cmp-icon">✕</span>Fortschritt stagniert — gleicher Körper, gleiche Zahlen</li>
+<li><span class="cmp-icon">✕</span>Keine Rückmeldung — niemand korrigiert deine Fehler</li>
+<li><span class="cmp-icon">✕</span>Motivation kommt und geht — keine Konstanz</li>
+</ul>
+</div>
+<div class="cmp-col cmp-col-right">
+<div class="cmp-col-tag">Mit Brick by Brik</div>
+<h3>SICHTBARE<br>VERÄNDERUNG.</h3>
+<ul class="cmp-list">
+<li><span class="cmp-icon">—</span>Individueller Plan der auf dich, dein Ziel und deinen Alltag passt</li>
+<li><span class="cmp-icon">—</span>Ernährung klar gesteuert — Ergebnisse statt Rätselraten</li>
+<li><span class="cmp-icon">—</span>Echte Progression — Woche für Woche messbar</li>
+<li><span class="cmp-icon">—</span>Direktes Feedback und laufende Anpassung</li>
+<li><span class="cmp-icon">—</span>Verbindlichkeit und Struktur die dich dranbleiben lässt</li>
+</ul>
+<div class="cmp-stats">
+<div><div class="cmp-stat-val">Ø −12 KG</div><div class="cmp-stat-lbl">Fettverlust bei Cuts</div></div>
+<div><div class="cmp-stat-val">Ø 5 MO</div><div class="cmp-stat-lbl">Bis zur sichtbaren Transformation</div></div>
+<div><div class="cmp-stat-val">~200G</div><div class="cmp-stat-lbl">Pro Woche im Lean Bulk</div></div>
+<div><div class="cmp-stat-val">100%</div><div class="cmp-stat-lbl">Individuell — kein Template</div></div>
+</div>
+</div>
+</div>
+<div class="cmp-cta rv"><a href="#bewerbung" class="btn btn-w">Coaching anfragen</a></div>
+</div>
+</section>
+
+<section class="faq light"><div class="faq-inner"><div class="faq-header rv"><div class="sec-label">Häufige Fragen</div><h2 class="sec-title">FAQ.</h2></div>
 <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Für wen ist das Coaching?<span class="faq-icon">+</span></button><div class="faq-a"><p>Für jeden, der es ernst meint. Ob du abnehmen, aufbauen oder endlich einen Plan haben willst, der funktioniert — solange du bereit bist dranzubleiben, können wir zusammenarbeiten. Du musst kein Wettkampfathlet sein.</p></div></div>
 <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Wie läuft der Start ab?<span class="faq-icon">+</span></button><div class="faq-a"><p>Du füllst das Formular aus. Ich melde mich persönlich bei dir, wir führen ein kurzes Gespräch und klären ob es passt. Danach bekommst du deinen ersten individuellen Plan — in der Regel innerhalb einer Woche.</p></div></div>
 <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Was unterscheidet dein Coaching von einem Programm?<span class="faq-icon">+</span></button><div class="faq-a"><p>Im Coaching baue ich alles individuell für dich — Training, Ernährung, Anpassungen, Feedback. Ein Programm ist eine strukturierte Vorlage. Beides funktioniert, aber Coaching ist persönlich und reagiert auf dich.</p></div></div>
