@@ -30,38 +30,88 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;display
 .final-cta{padding:8rem 3rem;text-align:center;position:relative;overflow:hidden;background:var(--bg)}.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 60%);pointer-events:none}.final-cta::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
 .legal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,5,5,.96);overflow-y:auto;padding:5rem 2rem}.legal.show{display:block}.legal-x{position:fixed;top:1.5rem;right:2rem;font-size:1.5rem;color:var(--text2);cursor:pointer;z-index:2001;background:none;border:none;font-family:var(--bd);transition:color .3s}.legal-x:hover{color:var(--text)}.legal-body{max-width:700px;margin:0 auto}.legal-body h1{font-family:var(--hd);font-size:2rem;color:var(--text);margin-bottom:2rem}.legal-body h2{font-family:var(--hd);font-size:1.2rem;color:var(--text);margin-top:2rem;margin-bottom:.8rem}.legal-body p{font-size:.82rem;color:var(--text2);line-height:1.7;margin-bottom:.8rem}
 footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.f-brand{font-family:var(--hd);font-size:.9rem;letter-spacing:.18em;color:var(--text3)}.f-brand b{color:var(--accent);font-weight:400}.f-links{display:flex;gap:1.8rem}.f-links a{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);text-decoration:none;cursor:pointer;transition:color .3s}.f-links a:hover{color:var(--text2)}
-/* LIGHT SECTIONS — WARM CHAMPAGNE GOLD */
-.light{background:linear-gradient(180deg,var(--bg) 0%,#D4C5A3 8%,#E0D2B2 50%,#D4C5A3 92%,var(--bg) 100%);position:relative;padding:7rem 3rem}
-.light .sec-label{color:#8A7345}.light .sec-title{color:#1A1A18}.light .sec-sub{color:#4A3F2A}
-.light .c-item{border-color:rgba(26,26,24,.12)}.light .c-item:first-child{border-color:rgba(26,26,24,.12)}.light .c-item-n{color:rgba(26,26,24,.18)}.light .c-item:hover .c-item-n{color:#8A7345}.light .c-item h3{color:#1A1A18}.light .c-item p{color:#4A3F2A}.light::before{display:none}
-.light .app-form{background:rgba(255,253,248,.6);backdrop-filter:blur(8px);border-color:rgba(26,26,24,.1);box-shadow:0 8px 40px rgba(176,146,80,.08)}.light .f-row label{color:#6A5A3A}.light .f-row input,.light .f-row select,.light .f-row textarea{background:rgba(255,253,248,.5);border-color:rgba(26,26,24,.1);color:#1A1A18}.light .f-row input::placeholder,.light .f-row textarea::placeholder{color:#9A8965}.light .f-row input:focus,.light .f-row select:focus,.light .f-row textarea:focus{border-color:#8A7345;background:rgba(255,253,248,.8)}.light .f-row select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 7L1 3h8z' fill='%239A8965'/%3E%3C/svg%3E")}.light .f-submit{background:#1A1A18;color:#F2F0ED}.light .f-note{color:#8A7345}.light .app-step-n{color:#8A7345}.light .app-step-t{color:#4A3F2A}.light .app-step-t strong{color:#1A1A18}
-.light .form-success{background:rgba(255,253,248,.7);border-color:#8A7345}.light .form-success h3{color:#8A7345}.light .form-success p{color:#4A3F2A}
-.light .faq-item{border-color:rgba(26,26,24,.12)}.light .faq-q{color:#1A1A18}.light .faq-q:hover{color:#8A7345}.light .faq-icon{color:#9A8965}.light .faq-item.open .faq-icon{color:#8A7345}.light .faq-a p{color:#4A3F2A}
+/* LIGHT SECTIONS — SOFT CHAMPAGNE WITH LIGHT FADE */
+.light{background:linear-gradient(180deg,var(--bg) 0%,#E8DDC4 6%,#F0E6D0 50%,#E8DDC4 94%,var(--bg) 100%);position:relative;padding:7rem 3rem;overflow:hidden}
+.light::after{content:'';position:absolute;top:10%;right:-20%;width:60%;height:80%;background:radial-gradient(ellipse at center,rgba(255,245,220,.5) 0%,transparent 60%);pointer-events:none;animation:floatLight 12s ease-in-out infinite}
+.light::before{content:'';position:absolute;bottom:10%;left:-20%;width:60%;height:80%;background:radial-gradient(ellipse at center,rgba(220,200,160,.3) 0%,transparent 60%);pointer-events:none;animation:floatLight 14s ease-in-out infinite reverse;display:block!important;border-radius:50%}
+@keyframes floatLight{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-20px) scale(1.1)}}
+.light>*{position:relative;z-index:1}
+.light .sec-label{color:#9A7D40}.light .sec-title{color:#1A1A18}.light .sec-sub{color:#4A3F2A}
+.light .c-item{border-color:rgba(26,26,24,.1)}.light .c-item:first-child{border-color:rgba(26,26,24,.1)}.light .c-item-n{color:rgba(26,26,24,.15)}.light .c-item:hover .c-item-n{color:#9A7D40}.light .c-item h3{color:#1A1A18}.light .c-item p{color:#4A3F2A}
+.light .app-form{background:rgba(255,252,244,.75);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.5);padding:2.8rem;box-shadow:0 20px 60px rgba(154,125,64,.12),inset 0 1px 0 rgba(255,255,255,.6)}
+.light .f-row label{color:#6A5A3A}
+.light .f-row input,.light .f-row select,.light .f-row textarea{background:rgba(255,252,244,.6);border:1px solid rgba(154,125,64,.18);color:#1A1A18;background-image:none!important;box-shadow:inset 0 1px 2px rgba(154,125,64,.05)}
+.light .f-row input::placeholder,.light .f-row textarea::placeholder{color:#9A8965}
+.light .f-row input:focus,.light .f-row select:focus,.light .f-row textarea:focus{border-color:#9A7D40;background:rgba(255,252,244,.9);box-shadow:0 0 0 3px rgba(154,125,64,.1)}
+.light .f-row select{cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none}
+.light .f-submit{background:#1A1A18;color:#F2F0ED;box-shadow:0 8px 24px rgba(26,26,24,.25)}
+.light .f-submit:hover{background:#000}
+.light .f-note{color:#9A7D40}
+.light .app-step-n{color:#9A7D40}.light .app-step-t{color:#4A3F2A}.light .app-step-t strong{color:#1A1A18}
+.light .form-success{background:rgba(255,252,244,.8);backdrop-filter:blur(20px);border-color:#9A7D40}.light .form-success h3{color:#9A7D40}.light .form-success p{color:#4A3F2A}
+.light .faq-item{border-color:rgba(26,26,24,.1)}.light .faq-q{color:#1A1A18}.light .faq-q:hover{color:#9A7D40}.light .faq-icon{color:#9A8965}.light .faq-item.open .faq-icon{color:#9A7D40}.light .faq-a p{color:#4A3F2A}
+
+/* ALSO FIX ALL SELECT DROPDOWNS GLOBALLY */
+select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:none!important}
 
 /* GLOW AROUND IMAGES */
 .about-img{box-shadow:0 0 100px 20px rgba(176,164,142,.25),0 0 200px 40px rgba(176,164,142,.08)}
 .tf-card{box-shadow:0 0 60px -10px rgba(176,164,142,.12)}
 .r-card img{box-shadow:0 0 40px -5px rgba(176,164,142,.1)}
 
-/* COMPARISON — COMPACT TABLE STYLE */
-.compare{padding:6rem 3rem;background:var(--bg);position:relative}.compare::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}.cmp-inner{max-width:1000px;margin:0 auto}.cmp-header{text-align:center;margin-bottom:3rem}.cmp-header .sec-sub{margin:0 auto}
-.cmp-table{border:1px solid var(--border);overflow:hidden}
-.cmp-table-head{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
-.cmp-head-cell{padding:1.3rem 2rem;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
-.cmp-head-cell.left{color:var(--text3);background:var(--bg2);border-right:1px solid var(--border)}
-.cmp-head-cell.right{color:var(--accent);background:linear-gradient(135deg,rgba(176,164,142,.1) 0%,transparent 100%)}
-.cmp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
-.cmp-row:last-child{border-bottom:none}
-.cmp-cell{padding:1.1rem 2rem;font-size:.85rem;font-weight:300;line-height:1.5;display:flex;align-items:center;gap:.7rem}
-.cmp-cell.left{color:var(--text3);background:var(--bg2);border-right:1px solid var(--border)}
-.cmp-cell.right{color:var(--text2);background:var(--bg3)}
-.cmp-cell .ic{flex-shrink:0;font-size:.7rem;width:16px}.cmp-cell.left .ic{color:var(--text4)}.cmp-cell.right .ic{color:var(--accent)}
-.cmp-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2rem;border:1px solid var(--border)}
-.cmp-stat{padding:1.3rem 1rem;text-align:center;border-right:1px solid var(--border)}.cmp-stat:last-child{border-right:none}
-.cmp-stat-val{font-family:var(--hd);font-size:1.5rem;color:var(--accent);line-height:1}
-.cmp-stat-lbl{font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.4rem}
+/* LIGHT BEAMS BACKGROUND ANIMATION */
+.dark-bg-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.dark-bg-fx::before,.dark-bg-fx::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(100px);opacity:.08}
+.dark-bg-fx::before{background:var(--accent);top:-20%;left:-10%;animation:drift1 20s ease-in-out infinite}
+.dark-bg-fx::after{background:#D4C5A3;bottom:-20%;right:-10%;animation:drift2 25s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}33%{transform:translate(40%,20%)}66%{transform:translate(-20%,40%)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}33%{transform:translate(-30%,-20%)}66%{transform:translate(20%,-40%)}}
+
+/* COMPARISON — PREMIUM SIDE BY SIDE */
+.compare{padding:6rem 3rem;background:var(--bg);position:relative;overflow:hidden}
+.compare::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
+.cmp-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+.cmp-header{text-align:center;margin-bottom:3.5rem}.cmp-header .sec-sub{margin:0 auto}
+.cmp-split{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;border:1px solid var(--border);background:var(--bg2);overflow:hidden;position:relative}
+.cmp-divider{background:linear-gradient(to bottom,transparent,var(--accent-border),transparent);width:1px}
+.cmp-side{padding:2.5rem 2.2rem}
+.cmp-side-left{background:var(--bg2)}
+.cmp-side-right{background:linear-gradient(135deg,rgba(176,164,142,.08) 0%,rgba(176,164,142,.02) 100%);position:relative}
+.cmp-side-right::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.cmp-tag{font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.2rem;display:inline-block}
+.cmp-side-left .cmp-tag{color:var(--text3)}
+.cmp-side-right .cmp-tag{color:var(--accent)}
+.cmp-heading{font-family:var(--hd);font-size:1.3rem;letter-spacing:.04em;margin-bottom:1.8rem;line-height:1.15}
+.cmp-side-left .cmp-heading{color:var(--text3)}
+.cmp-side-right .cmp-heading{color:var(--text)}
+.cmp-compare-row{display:flex;align-items:flex-start;gap:.7rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem;font-weight:300;line-height:1.55}
+.cmp-compare-row:last-child{border-bottom:none}
+.cmp-side-left .cmp-compare-row{color:var(--text3)}
+.cmp-side-right .cmp-compare-row{color:var(--text2)}
+.cmp-ic{flex-shrink:0;width:18px;font-size:.72rem;margin-top:2px}
+.cmp-side-left .cmp-ic{color:var(--text4)}
+.cmp-side-right .cmp-ic{color:var(--accent)}
+
+/* AVERAGE STATS */
+.cmp-averages{margin-top:2.5rem;border:1px solid var(--border);background:var(--bg2);padding:2rem}
+.cmp-avg-header{text-align:center;margin-bottom:1.8rem}
+.cmp-avg-label{font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.cmp-avg-title{font-family:var(--hd);font-size:1.1rem;letter-spacing:.04em;color:var(--text);line-height:1.2}
+.cmp-avg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border)}
+.cmp-avg-item{padding:1.5rem 1rem;text-align:center;border-right:1px solid var(--border);position:relative}
+.cmp-avg-item:last-child{border-right:none}
+.cmp-avg-val{font-family:var(--hd);font-size:1.8rem;color:var(--accent);line-height:1;letter-spacing:.02em}
+.cmp-avg-sub{font-size:.58rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.5rem}
 .cmp-cta{text-align:center;margin-top:2.5rem}
-@media(max-width:768px){.cmp-stats-row{grid-template-columns:repeat(2,1fr)}.cmp-stats-row .cmp-stat:nth-child(2){border-right:none}.cmp-stats-row .cmp-stat:nth-child(1),.cmp-stats-row .cmp-stat:nth-child(2){border-bottom:1px solid var(--border)}.cmp-head-cell,.cmp-cell{padding:.9rem 1rem;font-size:.78rem}}
+
+@media(max-width:768px){
+.cmp-split{grid-template-columns:1fr}
+.cmp-divider{width:auto;height:1px;background:linear-gradient(to right,transparent,var(--accent-border),transparent)}
+.cmp-side{padding:2rem 1.5rem}
+.cmp-avg-grid{grid-template-columns:repeat(2,1fr)}
+.cmp-avg-item:nth-child(1),.cmp-avg-item:nth-child(2){border-bottom:1px solid var(--border)}
+.cmp-avg-item:nth-child(2){border-right:none}
+}
 
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.rv.vis{opacity:1;transform:translateY(0)}.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
 .tf-progress{margin-top:1.2rem;border:1px solid var(--border);overflow:hidden;border-radius:2px}.tf-progress img{width:100%;display:block}.tf-progress-label{font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:.6rem .8rem;background:var(--bg)}
@@ -144,42 +194,50 @@ footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-cont
 
 <!-- COMPARISON -->
 <section class="compare">
+<div class="dark-bg-fx"></div>
 <div class="cmp-inner">
 <div class="cmp-header rv">
 <div class="sec-label">Deine Entscheidung</div>
 <h2 class="sec-title">DU IN 6 MONATEN.</h2>
 <p class="sec-sub">Zwei Wege. Ein Unterschied. Du entscheidest welcher deiner ist.</p>
 </div>
-<div class="cmp-grid rv">
-<div class="cmp-col cmp-col-left">
-<div class="cmp-col-tag">Ohne System</div>
-<h3>GLEICHER STAND.<br>6 MONATE SPÄTER.</h3>
-<ul class="cmp-list">
-<li><span class="cmp-icon">✕</span>Kein klarer Plan — jede Woche was anderes trainiert</li>
-<li><span class="cmp-icon">✕</span>Ernährung geraten — mal mehr, mal weniger, kein System</li>
-<li><span class="cmp-icon">✕</span>Fortschritt stagniert — gleicher Körper, gleiche Zahlen</li>
-<li><span class="cmp-icon">✕</span>Keine Rückmeldung — niemand korrigiert deine Fehler</li>
-<li><span class="cmp-icon">✕</span>Motivation kommt und geht — keine Konstanz</li>
-</ul>
+<div class="cmp-split rv">
+<div class="cmp-side cmp-side-left">
+<div class="cmp-tag">Ohne Plan</div>
+<div class="cmp-heading">GLEICHER STAND.<br>GLEICHER KÖRPER.</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>Training ohne klare Richtung</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>Ernährung geraten, nicht gesteuert</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>Fortschritt stagniert — kein sichtbarer Unterschied</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>Selbstbild bleibt wie es ist</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>Motivation kommt, geht, kommt, geht</div>
+<div class="cmp-compare-row"><span class="cmp-ic">✕</span>6 Monate später: genau da wo du heute stehst</div>
 </div>
-<div class="cmp-col cmp-col-right">
-<div class="cmp-col-tag">Mit Brick by Brik</div>
-<h3>SICHTBARE<br>VERÄNDERUNG.</h3>
-<ul class="cmp-list">
-<li><span class="cmp-icon">—</span>Individueller Plan der auf dich, dein Ziel und deinen Alltag passt</li>
-<li><span class="cmp-icon">—</span>Ernährung klar gesteuert — Ergebnisse statt Rätselraten</li>
-<li><span class="cmp-icon">—</span>Echte Progression — Woche für Woche messbar</li>
-<li><span class="cmp-icon">—</span>Direktes Feedback und laufende Anpassung</li>
-<li><span class="cmp-icon">—</span>Verbindlichkeit und Struktur die dich dranbleiben lässt</li>
-</ul>
-<div class="cmp-stats">
-<div><div class="cmp-stat-val">Ø −12 KG</div><div class="cmp-stat-lbl">Fettverlust bei Cuts</div></div>
-<div><div class="cmp-stat-val">Ø 5 MO</div><div class="cmp-stat-lbl">Bis zur sichtbaren Transformation</div></div>
-<div><div class="cmp-stat-val">~200G</div><div class="cmp-stat-lbl">Pro Woche im Lean Bulk</div></div>
-<div><div class="cmp-stat-val">100%</div><div class="cmp-stat-lbl">Individuell — kein Template</div></div>
+<div class="cmp-divider"></div>
+<div class="cmp-side cmp-side-right">
+<div class="cmp-tag">Mit Brick by Brik</div>
+<div class="cmp-heading">SICHTBARE<br>VERÄNDERUNG.</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>Individueller Plan mit klarer Progression</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>Ernährung gesteuert auf dein Ziel und deinen Alltag</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>Messbarer Fortschritt Woche für Woche</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>Körper der dich im Spiegel überrascht</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>Verbindlichkeit und Struktur statt Motivation</div>
+<div class="cmp-compare-row"><span class="cmp-ic">—</span>6 Monate später: ein anderer Mensch</div>
 </div>
 </div>
+
+<div class="cmp-averages rv">
+<div class="cmp-avg-header">
+<div class="cmp-avg-label">Durchschnitt meiner Klienten</div>
+<div class="cmp-avg-title">WAS IM SCHNITT IN 6 MONATEN PASSIERT.</div>
 </div>
+<div class="cmp-avg-grid">
+<div class="cmp-avg-item"><div class="cmp-avg-val">−12 KG</div><div class="cmp-avg-sub">Fettverlust bei Cuts</div></div>
+<div class="cmp-avg-item"><div class="cmp-avg-val">+4 KG</div><div class="cmp-avg-sub">Lean Muskelaufbau</div></div>
+<div class="cmp-avg-item"><div class="cmp-avg-val">~200G</div><div class="cmp-avg-sub">Kontrollierter Zuwachs / Woche</div></div>
+<div class="cmp-avg-item"><div class="cmp-avg-val">100%</div><div class="cmp-avg-sub">Individuell — kein Template</div></div>
+</div>
+</div>
+
 <div class="cmp-cta rv"><a href="#bewerbung" class="btn btn-w">Coaching anfragen</a></div>
 </div>
 </section>
