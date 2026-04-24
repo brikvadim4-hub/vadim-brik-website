@@ -268,7 +268,7 @@ function updateCD(){const t=new Date('2026-05-01T00:00:00').getTime(),n=Date.now
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 document.querySelectorAll('.ba-slider').forEach(s=>{const h=s.querySelector('.ba-handle'),a=s.querySelector('.ba-after');let dr=false;function sp(x){const r=s.getBoundingClientRect();let p=((x-r.left)/r.width)*100;p=Math.max(2,Math.min(98,p));h.style.left=p+'%';a.style.clipPath=`inset(0 0 0 ${p}%)`}s.addEventListener('mousedown',e=>{dr=true;sp(e.clientX)});window.addEventListener('mousemove',e=>{if(dr)sp(e.clientX)});window.addEventListener('mouseup',()=>dr=false);s.addEventListener('touchstart',e=>{dr=true;sp(e.touches[0].clientX)},{passive:true});window.addEventListener('touchmove',e=>{if(dr)sp(e.touches[0].clientX)},{passive:true});window.addEventListener('touchend',()=>dr=false)});
 
-/* COACHING FORM — AJAX + BREVO + CONDITIONAL SUCCESS */
+/* COACHING FORM — AJAX + BREVO (via hidden iframe) + CONDITIONAL SUCCESS */
 document.getElementById('coachingForm').addEventListener('submit',async function(e){
 e.preventDefault();
 const form=this;const btn=document.getElementById('formBtn');const budget=document.getElementById('budgetSelect').value;
@@ -279,36 +279,89 @@ const data=new FormData(form);
 /* 1. Send to Formspree (email notification for Vadim) */
 fetch('https://formspree.io/f/mjgpjqwl',{method:'POST',body:data,headers:{'Accept':'application/json'}});
 
-/* 2. Send to Brevo (triggers automation based on BUDGET attribute) */
-const brevoData=new FormData();
-brevoData.append('EMAIL',form.email.value);
-brevoData.append('VORNAME',form.name.value);
-brevoData.append('PHONE',form.phone.value||'');
-brevoData.append('INSTAGRAM',form.instagram.value||'');
-brevoData.append('GOAL',form.goal.value);
-brevoData.append('LEVEL',form.level.value);
-brevoData.append('CHALLANGE',form.challenge.value);
-brevoData.append('BUDGET',budget);
-fetch('https://fb33ca8c.sibforms.com/serve/MUIFAO65iVn0eHjjCbckUOedUt0M_uHe5OzBs_rwL6Fez-zhVUoS-JhAvpJVAN_8tiUnOhj94-mRtsyq0xVmGwlygFrT32Ty2Ur6mgSrX7yUP94fsmspw1WROhsJLmKxw9XG0QJdX4R-YHGZKEMRCnkK_WZMcgCyqUluqhlOjo0PD-YbJZX_fvKaMvs9Uiby4mX_eYO81sdmpAzcBw==',{method:'POST',body:brevoData,mode:'no-cors'});
+/* 2. Send to Brevo via hidden iframe (proper way for Brevo forms) */
+const brevoIframe=document.createElement('iframe');
+brevoIframe.name='brevo-submit-'+Date.now();
+brevoIframe.style.display='none';
+document.body.appendChild(brevoIframe);
+
+const brevoForm=document.createElement('form');
+brevoForm.method='POST';
+brevoForm.action='https://fb33ca8c.sibforms.com/serve/MUIFAO65iVn0eHjjCbckUOedUt0M_uHe5OzBs_rwL6Fez-zhVUoS-JhAvpJVAN_8tiUnOhj94-mRtsyq0xVmGwlygFrT32Ty2Ur6mgSrX7yUP94fsmspw1WROhsJLmKxw9XG0QJdX4R-YHGZKEMRCnkK_WZMcgCyqUluqhlOjo0PD-YbJZX_fvKaMvs9Uiby4mX_eYO81sdmpAzcBw==';
+brevoForm.target=brevoIframe.name;
+brevoForm.style.display='none';
+
+const fields={
+EMAIL:form.email.value,
+VORNAME:form.name.value,
+PHONE:form.phone.value||'',
+INSTAGRAM:form.instagram.value||'',
+GOAL:form.goal.value,
+LEVEL:form.level.value,
+CHALLANGE:form.challenge.value,
+BUDGET:budget,
+locale:'de',
+email_address_check:'',
+html_type:'simple'
+};
+for(const key in fields){
+const input=document.createElement('input');
+input.type='hidden';
+input.name=key;
+input.value=fields[key];
+brevoForm.appendChild(input);
+}
+document.body.appendChild(brevoForm);
+brevoForm.submit();
+
+/* Clean up after 3 seconds */
+setTimeout(()=>{brevoForm.remove();brevoIframe.remove();},3000);
 
 form.style.display='none';
 if(budget==='bis-100'){document.getElementById('successLow').style.display='block'}
 else if(budget==='100-250'){document.getElementById('successMid').style.display='block'}
 else{document.getElementById('successHigh').style.display='block'}
-}catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false}
+}catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false;console.error(err)}
 });
 
-/* WAITLIST FORM — AJAX */
+/* WAITLIST FORM — AJAX via hidden iframe */
 document.getElementById('waitlistForm').addEventListener('submit',async function(e){
 e.preventDefault();
 const form=this;const btn=form.querySelector('button');
 btn.textContent='Wird gesendet...';btn.disabled=true;
 try{
-const data=new FormData(form);
-await fetch('https://fb33ca8c.sibforms.com/serve/MUIFAL-EI6FULdIID6oGFzFugtbtkP2JvHI9gOtohQV9RIDuuV_7jiuwXY5HtH2bAbxSW4A2qOI3bE0LrtRFKWBQkPsG3PlW-pNRkQ0MsLOn-tCehB9fOZAQGBKwXelzYEPTTXAWwQWNik7E7qjM_kE755-UtEuZy0uZFhEiZ2iTuIfaHqr1_iyk0HN9_ceo4kKaw9dxUvVbRicUhA==',{method:'POST',body:data,mode:'no-cors'});
+const brevoIframe=document.createElement('iframe');
+brevoIframe.name='wl-submit-'+Date.now();
+brevoIframe.style.display='none';
+document.body.appendChild(brevoIframe);
+
+const brevoForm=document.createElement('form');
+brevoForm.method='POST';
+brevoForm.action='https://fb33ca8c.sibforms.com/serve/MUIFAL-EI6FULdIID6oGFzFugtbtkP2JvHI9gOtohQV9RIDuuV_7jiuwXY5HtH2bAbxSW4A2qOI3bE0LrtRFKWBQkPsG3PlW-pNRkQ0MsLOn-tCehB9fOZAQGBKwXelzYEPTTXAWwQWNik7E7qjM_kE755-UtEuZy0uZFhEiZ2iTuIfaHqr1_iyk0HN9_ceo4kKaw9dxUvVbRicUhA==';
+brevoForm.target=brevoIframe.name;
+brevoForm.style.display='none';
+
+const wlFields={
+EMAIL:form.EMAIL.value,
+locale:'de',
+email_address_check:'',
+html_type:'simple'
+};
+for(const key in wlFields){
+const input=document.createElement('input');
+input.type='hidden';
+input.name=key;
+input.value=wlFields[key];
+brevoForm.appendChild(input);
+}
+document.body.appendChild(brevoForm);
+brevoForm.submit();
+
+setTimeout(()=>{brevoForm.remove();brevoIframe.remove();},3000);
+
 form.style.display='none';
 document.getElementById('wlSuccess').style.display='block';
-}catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false}
+}catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false;console.error(err)}
 });
 </script>
 </body>
