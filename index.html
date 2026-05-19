@@ -16,6 +16,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;display
 .btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2.2rem;font-family:var(--bd);font-size:.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .35s}.btn-w{background:var(--text);color:var(--bg)}.btn-w:hover{opacity:.85;transform:translateY(-1px)}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}.hero-vid{position:absolute;inset:0;z-index:0}.hero-vid video{width:100%;height:100%;object-fit:cover;opacity:.99}.hero-grad{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 40%,rgba(5,5,5,.05) 0%,rgba(5,5,5,.2) 70%,rgba(5,5,5,.4) 100%)}.hero-ct{position:relative;z-index:2;padding:0 2rem}.hero-brand{font-family:var(--hd);font-size:clamp(4rem,12vw,9rem);line-height:.88;letter-spacing:.04em;margin-bottom:1.8rem;color:var(--text);text-shadow:0 2px 30px rgba(0,0,0,.6),0 0 60px rgba(0,0,0,.4)}.hero-brand b{color:var(--accent);font-weight:400}.hero-line{width:60px;height:1px;background:var(--accent);margin:0 auto 1.8rem;opacity:.5}.hero-sub{font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:300;color:var(--text2);max-width:480px;margin:0 auto 2.8rem;line-height:1.7;text-shadow:0 1px 10px rgba(0,0,0,.8)}.hero-cta .btn{font-size:.72rem;padding:.95rem 2.4rem}
 .positioning{padding:6rem 3rem;text-align:center;position:relative}.positioning::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent)}.pos-text{max-width:680px;margin:0 auto;font-size:clamp(1.05rem,2vw,1.3rem);font-weight:300;color:var(--text2);line-height:1.85}.pos-text strong{color:var(--text);font-weight:500}
+
+/* ============ 1RM CALCULATOR ============ */
+.calculator{padding:7rem 3rem;background:var(--bg);position:relative}
+.calculator::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
+.calc-inner{max-width:780px;margin:0 auto}
+.calc-header{margin-bottom:3rem;max-width:560px}
+.calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.calc-cell{background:var(--bg2);padding:1.6rem 1.4rem}
+.calc-label{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:.8rem;display:flex;justify-content:space-between;align-items:center;min-height:1.2rem}
+.calc-unit{display:flex;gap:.3rem}
+.calc-unit button{background:none;border:1px solid var(--border);color:var(--text3);padding:.25rem .55rem;font-family:var(--bd);font-size:.6rem;font-weight:600;letter-spacing:.1em;cursor:pointer;transition:all .25s}
+.calc-unit button:hover{color:var(--text2);border-color:var(--text3)}
+.calc-unit button.active{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.calc-cell input{width:100%;background:none;border:none;outline:none;color:var(--text);font-family:var(--hd);font-size:2.6rem;letter-spacing:.02em;padding:0;-moz-appearance:textfield}
+.calc-cell input::-webkit-outer-spin-button,.calc-cell input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc-quick{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.9rem;margin-bottom:.5rem}
+.calc-quick button{background:none;border:1px solid var(--border);color:var(--text3);padding:.5rem .85rem;font-family:var(--bd);font-size:.65rem;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:all .25s;text-transform:uppercase}
+.calc-quick button:hover{color:var(--text2);border-color:var(--text3)}
+.calc-quick button.active{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent)}
+.calc-warning{display:none;padding:.85rem 1rem;border:1px solid var(--accent-border);background:var(--accent-dim);color:var(--accent);font-size:.72rem;letter-spacing:.04em;margin-top:1.2rem;line-height:1.55;font-weight:400}
+.calc-warning.show{display:block}
+.calc-result{padding:2.2rem 0 1.8rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:2.5rem}
+.calc-result-label{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:baseline}
+.calc-result-formula{color:var(--text3);font-size:.55rem;letter-spacing:.18em}
+.calc-result-value{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.calc-result-num{font-family:var(--hd);font-size:clamp(4.5rem,13vw,7.5rem);line-height:.9;color:var(--accent);letter-spacing:.02em}
+.calc-result-unit{font-family:var(--hd);font-size:1.4rem;color:var(--text3);letter-spacing:.08em}
+.calc-epley{margin-top:1rem;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text3)}
+.calc-epley-val{color:var(--text2)}
+.calc-zones{display:none;margin-top:2.2rem}
+.calc-zones.show{display:block}
+.calc-zones-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.8rem}
+.calc-zones-head-title{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--text2)}
+.calc-zones-head-legend{font-size:.55rem;letter-spacing:.18em;color:var(--text3);text-transform:uppercase}
+.calc-zones-table{border-top:1px solid var(--border)}
+.calc-zone-row{display:grid;grid-template-columns:55px 1fr 65px 100px;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--border);gap:.8rem;transition:padding-left .3s}
+.calc-zone-row:hover{padding-left:.5rem}
+.calc-zone-pct{font-family:var(--hd);font-size:.95rem;color:var(--text2);letter-spacing:.04em}
+.calc-zone-row.max .calc-zone-pct{color:var(--accent)}
+.calc-zone-weight{font-family:var(--hd);font-size:1.15rem;color:var(--text);letter-spacing:.02em}
+.calc-zone-row.max .calc-zone-weight{color:var(--accent)}
+.calc-zone-weight-unit{font-size:.55rem;color:var(--text3);font-family:var(--bd);font-weight:500;letter-spacing:.12em;margin-left:.3rem;text-transform:uppercase}
+.calc-zone-reps{font-size:.8rem;color:var(--text2);font-family:var(--bd);font-weight:500;letter-spacing:.02em}
+.calc-zone-label{font-size:.55rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);text-align:right}
+.calc-zone-row.max .calc-zone-label{color:var(--accent)}
+.calc-zones-note{margin-top:1.2rem;font-size:.75rem;color:var(--text3);line-height:1.65;font-style:italic;font-weight:300}
+.calc-source{font-size:.58rem;letter-spacing:.16em;color:var(--text3);line-height:1.9;padding-top:1.5rem;border-top:1px solid var(--border);margin-top:2rem;text-transform:uppercase}
+.calc-source b{color:var(--accent);font-weight:600;letter-spacing:.18em}
+.calc-cta{margin-top:2.8rem;text-align:left}
+
+@media(max-width:768px){
+.calculator{padding:4.5rem 1.5rem}
+.calc-cell{padding:1.3rem 1.1rem}
+.calc-cell input{font-size:2rem}
+.calc-zone-row{grid-template-columns:42px 1fr 50px 80px;gap:.5rem;padding:.75rem 0}
+.calc-zone-weight{font-size:1rem}
+.calc-zone-label{font-size:.5rem}
+.calc-zone-pct{font-size:.85rem}
+.calc-zone-reps{font-size:.72rem}
+.calc-cta{text-align:center}
+}
+/* ============ END CALCULATOR ============ */
+
 .transformations{padding:7rem 3rem;background:var(--bg2);position:relative}.transformations::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}.tf-inner{max-width:1200px;margin:0 auto}.sec-label{font-size:.6rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}.sec-title{font-family:var(--hd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.95;letter-spacing:.02em;color:var(--text);margin-bottom:1rem}.sec-sub{font-size:.95rem;font-weight:300;color:var(--text2);max-width:500px;line-height:1.7}.tf-header{margin-bottom:4rem}.tf-grid{display:flex;flex-direction:column;gap:3rem}
 .tf-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);overflow:hidden;background:var(--bg3)}.tf-card:nth-child(even){direction:rtl}.tf-card:nth-child(even)>*{direction:ltr}
 .ba-slider{position:relative;overflow:hidden;cursor:col-resize;aspect-ratio:4/5;max-height:500px}.ba-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}.ba-after{clip-path:inset(0 0 0 50%)}.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent);z-index:5;transform:translateX(-50%)}.ba-handle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border:2px solid var(--accent);border-radius:50%;background:rgba(5,5,5,.7);backdrop-filter:blur(4px)}.ba-handle::before{content:'◂ ▸';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.55rem;color:var(--accent);z-index:6;letter-spacing:2px;white-space:nowrap}.ba-label{position:absolute;bottom:1rem;padding:.35rem .8rem;font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;z-index:4;background:rgba(5,5,5,.75);backdrop-filter:blur(8px);color:var(--text)}.ba-label-before{left:1rem}.ba-label-after{right:1rem}
@@ -45,7 +108,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;display
 .final-cta{padding:8rem 3rem;text-align:center;position:relative;overflow:hidden;background:var(--bg)}.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 60%);pointer-events:none}.final-cta::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
 .legal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,5,5,.96);overflow-y:auto;padding:5rem 2rem}.legal.show{display:block}.legal-x{position:fixed;top:1.5rem;right:2rem;font-size:1.5rem;color:var(--text2);cursor:pointer;z-index:2001;background:none;border:none;font-family:var(--bd);transition:color .3s}.legal-x:hover{color:var(--text)}.legal-body{max-width:700px;margin:0 auto}.legal-body h1{font-family:var(--hd);font-size:2rem;color:var(--text);margin-bottom:2rem}.legal-body h2{font-family:var(--hd);font-size:1.2rem;color:var(--text);margin-top:2rem;margin-bottom:.8rem}.legal-body p{font-size:.82rem;color:var(--text2);line-height:1.7;margin-bottom:.8rem}
 footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.f-brand{font-family:var(--hd);font-size:.9rem;letter-spacing:.18em;color:var(--text3)}.f-brand b{color:var(--accent);font-weight:400}.f-links{display:flex;gap:1.8rem}.f-links a{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);text-decoration:none;cursor:pointer;transition:color .3s}.f-links a:hover{color:var(--text2)}
-/* LIGHT SECTIONS — SOFT CHAMPAGNE WITH LIGHT FADE */
 .light{background:linear-gradient(180deg,var(--bg) 0%,#E8DDC4 6%,#F0E6D0 50%,#E8DDC4 94%,var(--bg) 100%);position:relative;padding:7rem 3rem;overflow:hidden}
 .light::after{content:'';position:absolute;top:10%;right:-20%;width:60%;height:80%;background:radial-gradient(ellipse at center,rgba(255,245,220,.5) 0%,transparent 60%);pointer-events:none;animation:floatLight 12s ease-in-out infinite}
 .light::before{content:'';position:absolute;bottom:10%;left:-20%;width:60%;height:80%;background:radial-gradient(ellipse at center,rgba(220,200,160,.3) 0%,transparent 60%);pointer-events:none;animation:floatLight 14s ease-in-out infinite reverse;display:block!important;border-radius:50%}
@@ -65,24 +127,16 @@ footer{padding:3rem;border-top:1px solid var(--border);display:flex;justify-cont
 .light .app-step-n{color:#9A7D40}.light .app-step-t{color:#4A3F2A}.light .app-step-t strong{color:#1A1A18}
 .light .form-success{background:rgba(255,252,244,.8);backdrop-filter:blur(20px);border-color:#9A7D40}.light .form-success h3{color:#9A7D40}.light .form-success p{color:#4A3F2A}
 .light .faq-item{border-color:rgba(26,26,24,.1)}.light .faq-q{color:#1A1A18}.light .faq-q:hover{color:#9A7D40}.light .faq-icon{color:#9A8965}.light .faq-item.open .faq-icon{color:#9A7D40}.light .faq-a p{color:#4A3F2A}
-
-/* ALSO FIX ALL SELECT DROPDOWNS GLOBALLY */
 select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:none!important}
-
-/* GLOW AROUND IMAGES */
 .about-img{box-shadow:0 0 100px 20px rgba(176,164,142,.25),0 0 200px 40px rgba(176,164,142,.08)}
 .tf-card{box-shadow:0 0 60px -10px rgba(176,164,142,.12)}
 .r-card img{box-shadow:0 0 40px -5px rgba(176,164,142,.1)}
-
-/* LIGHT BEAMS BACKGROUND ANIMATION */
 .dark-bg-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .dark-bg-fx::before,.dark-bg-fx::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(100px);opacity:.08}
 .dark-bg-fx::before{background:var(--accent);top:-20%;left:-10%;animation:drift1 20s ease-in-out infinite}
 .dark-bg-fx::after{background:#D4C5A3;bottom:-20%;right:-10%;animation:drift2 25s ease-in-out infinite}
 @keyframes drift1{0%,100%{transform:translate(0,0)}33%{transform:translate(40%,20%)}66%{transform:translate(-20%,40%)}}
 @keyframes drift2{0%,100%{transform:translate(0,0)}33%{transform:translate(-30%,-20%)}66%{transform:translate(20%,-40%)}}
-
-/* COMPARISON — PREMIUM SIDE BY SIDE */
 .compare{padding:6rem 3rem;background:var(--bg);position:relative;overflow:hidden}
 .compare::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--border)}
 .cmp-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
@@ -106,8 +160,6 @@ select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-i
 .cmp-ic{flex-shrink:0;width:18px;font-size:.72rem;margin-top:2px}
 .cmp-side-left .cmp-ic{color:var(--text4)}
 .cmp-side-right .cmp-ic{color:var(--accent)}
-
-/* AVERAGE STATS */
 .cmp-averages{margin-top:2.5rem;border:1px solid var(--border);background:var(--bg2);padding:2rem}
 .cmp-avg-header{text-align:center;margin-bottom:1.8rem}
 .cmp-avg-label{font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
@@ -118,7 +170,6 @@ select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-i
 .cmp-avg-val{font-family:var(--hd);font-size:1.8rem;color:var(--accent);line-height:1;letter-spacing:.02em}
 .cmp-avg-sub{font-size:.58rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:.5rem}
 .cmp-cta{text-align:center;margin-top:2.5rem}
-
 @media(max-width:768px){
 .cmp-split{grid-template-columns:1fr}
 .cmp-divider{width:auto;height:1px;background:linear-gradient(to right,transparent,var(--accent-border),transparent)}
@@ -127,7 +178,6 @@ select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-i
 .cmp-avg-item:nth-child(1),.cmp-avg-item:nth-child(2){border-bottom:1px solid var(--border)}
 .cmp-avg-item:nth-child(2){border-right:none}
 }
-
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.rv.vis{opacity:1;transform:translateY(0)}.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
 .tf-progress{margin-top:1.2rem;border:1px solid var(--border);overflow:hidden;border-radius:2px}.tf-progress img{width:100%;display:block}.tf-progress-label{font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:.6rem .8rem;background:var(--bg)}
 .wl-success{display:none;text-align:center;padding:1.2rem;border:1px solid var(--accent-border);background:var(--accent-dim)}.wl-success p{font-size:.9rem;font-weight:500;color:var(--accent);margin:0}
@@ -142,6 +192,76 @@ select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-i
 <section class="hero"><div class="hero-vid"><video autoplay muted loop playsinline><source src="hero-video.mp4" type="video/mp4"></video></div><div class="hero-grad"></div><div class="hero-ct"><h1 class="hero-brand rv">BRICK BY <b>BRIK</b></h1><div class="hero-line rv rv-d1"></div><p class="hero-sub rv rv-d2">Individuelles Coaching für echte Veränderung.<br>Dein Körper. Dein Plan. Dein Fortschritt.</p><div class="hero-cta rv rv-d3"><a href="#bewerbung" class="btn btn-w">Coaching anfragen</a></div></div></section>
 
 <section class="positioning"><p class="pos-text rv"><strong>Kein Standardprogramm. Kein Copy-Paste.</strong> Individuelles Coaching, das auf dich, dein Ziel und deinen Alltag gebaut ist — ob du Fett verlieren, Muskulatur aufbauen oder endlich einen Plan haben willst, der wirklich funktioniert.</p></section>
+
+<!-- ============ 1RM CALCULATOR ============ -->
+<section class="calculator" id="calculator">
+<div class="calc-inner">
+<div class="calc-header rv">
+<div class="sec-label">Tool · One Rep Max</div>
+<h2 class="sec-title">ONE REP MAX.<br>OHNE RATEN.</h2>
+<p class="sec-sub">Trag dein letztes Working-Set ein. Du bekommst dein geschätztes 1RM und die exakten Prozent-Zonen nach NSCA-Standard.</p>
+</div>
+
+<div class="rv">
+<div class="calc-inputs">
+<div class="calc-cell">
+<div class="calc-label">
+<span>Gewicht</span>
+<div class="calc-unit">
+<button class="active" data-unit="kg" type="button">KG</button>
+<button data-unit="lbs" type="button">LBS</button>
+</div>
+</div>
+<input id="calcWeight" type="number" inputmode="decimal" value="140" placeholder="0">
+</div>
+<div class="calc-cell">
+<div class="calc-label"><span>Reps</span></div>
+<input id="calcReps" type="number" inputmode="numeric" min="1" max="20" value="5" placeholder="0">
+</div>
+</div>
+
+<div class="calc-quick" id="calcQuick">
+<button data-reps="1" type="button">1 Rep</button>
+<button data-reps="2" type="button">2 Reps</button>
+<button data-reps="3" type="button">3 Reps</button>
+<button class="active" data-reps="5" type="button">5 Reps</button>
+<button data-reps="8" type="button">8 Reps</button>
+<button data-reps="10" type="button">10 Reps</button>
+</div>
+
+<div class="calc-warning" id="calcWarning">Über 12 Reps werden die Formeln ungenau. Nutz ein Set zwischen 1–10 Reps für ein verlässliches 1RM.</div>
+
+<div class="calc-result">
+<div class="calc-result-label">
+<span>Dein geschätztes 1RM</span>
+<span class="calc-result-formula">Brzycki</span>
+</div>
+<div class="calc-result-value">
+<div class="calc-result-num" id="calcOneRM">—</div>
+<div class="calc-result-unit" id="calcUnit">KG</div>
+</div>
+<div class="calc-epley" id="calcEpleyWrap" style="display:none">Epley-Vergleich · <span class="calc-epley-val" id="calcEpley"></span></div>
+</div>
+
+<div class="calc-zones" id="calcZones">
+<div class="calc-zones-head">
+<span class="calc-zones-head-title">Trainingszonen</span>
+<span class="calc-zones-head-legend">% · Last · Reps</span>
+</div>
+<div class="calc-zones-table" id="calcZonesTable"></div>
+<p class="calc-zones-note">Reps = maximale Wiederholungen bei der jeweiligen Last. Im strukturierten Training arbeitest du bewusst unterhalb dieser Werte (1–2 Reps in Reserve).</p>
+</div>
+
+<div class="calc-source">
+<b>Brzycki (1993)</b> · 1RM = W × 36 ÷ (37 − R)<br>
+<b>NSCA Training Load Chart</b> · Essentials of Strength & Conditioning
+</div>
+</div>
+
+<div class="calc-cta rv"><a href="#bewerbung" class="btn btn-w">Coaching anfragen</a></div>
+</div>
+</section>
+<!-- ============ END CALCULATOR ============ -->
 
 <section class="transformations" id="ergebnisse"><div class="tf-inner"><div class="tf-header rv"><div class="sec-label">Echte Ergebnisse</div><h2 class="sec-title">WAS PASSIERT, WENN<br>DER PLAN STIMMT.</h2><p class="sec-sub">Keine Stockfotos. Keine erfundenen Zahlen. Echte Menschen, echte Veränderung.</p></div><div class="tf-grid">
 
@@ -228,7 +348,6 @@ select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-i
 <div class="wl-success" id="wlSuccess"><p>Du bist auf der Liste. Wir melden uns.</p></div>
 <p class="wl-note rv">Kein Spam. Eine Nachricht wenn es soweit ist.</p></div></section>
 
-<!-- COMPARISON -->
 <section class="compare">
 <div class="dark-bg-fx"></div>
 <div class="cmp-inner">
@@ -324,18 +443,39 @@ updateCD();setInterval(updateCD,1e3);
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 document.querySelectorAll('.ba-slider').forEach(s=>{const h=s.querySelector('.ba-handle'),a=s.querySelector('.ba-after');let dr=false;function sp(x){const r=s.getBoundingClientRect();let p=((x-r.left)/r.width)*100;p=Math.max(2,Math.min(98,p));h.style.left=p+'%';a.style.clipPath=`inset(0 0 0 ${p}%)`}s.addEventListener('mousedown',e=>{dr=true;sp(e.clientX)});window.addEventListener('mousemove',e=>{if(dr)sp(e.clientX)});window.addEventListener('mouseup',()=>dr=false);s.addEventListener('touchstart',e=>{dr=true;sp(e.touches[0].clientX)},{passive:true});window.addEventListener('touchmove',e=>{if(dr)sp(e.touches[0].clientX)},{passive:true});window.addEventListener('touchend',()=>dr=false)});
 
-/* COACHING FORM — AJAX to Formspree + Brevo (via Vercel API) */
+/* ============ 1RM CALCULATOR LOGIC ============ */
+(function(){
+const Z=[{p:100,r:'1',l:'MAX'},{p:95,r:'2',l:'PEAK'},{p:93,r:'3',l:'PEAK'},{p:90,r:'4',l:'STRENGTH'},{p:87,r:'5',l:'STRENGTH'},{p:85,r:'6',l:'STRENGTH'},{p:83,r:'7',l:'HYPERTROPHY'},{p:80,r:'8',l:'HYPERTROPHY'},{p:77,r:'9',l:'HYPERTROPHY'},{p:75,r:'10',l:'HYPERTROPHY'},{p:70,r:'12',l:'VOLUME'},{p:67,r:'15',l:'ENDURANCE'}];
+const W=document.getElementById('calcWeight'),R=document.getElementById('calcReps'),O=document.getElementById('calcOneRM'),U=document.getElementById('calcUnit'),EW=document.getElementById('calcEpleyWrap'),E=document.getElementById('calcEpley'),Z2=document.getElementById('calcZones'),ZT=document.getElementById('calcZonesTable'),WN=document.getElementById('calcWarning');
+let unit='KG';
+function brz(w,r){return r===1?Math.round(w*10)/10:Math.round(w*36/(37-r)*10)/10}
+function epl(w,r){return r===1?Math.round(w*10)/10:Math.round(w*(1+r/30)*10)/10}
+function rd(v){return Math.round(v*2)/2}
+function calc(){
+const w=parseFloat(W.value),r=parseInt(R.value);
+WN.classList.toggle('show',r>12);
+if(!w||w<=0||!r||r<1||r>12){O.textContent='—';EW.style.display='none';Z2.classList.remove('show');return}
+const orm=brz(w,r),erm=epl(w,r);
+O.textContent=orm;E.textContent=erm+' '+unit;EW.style.display='block';
+Z2.classList.add('show');
+ZT.innerHTML=Z.map(z=>{const wt=rd(orm*z.p/100),m=z.p===100?' max':'';return `<div class="calc-zone-row${m}"><div class="calc-zone-pct">${z.p}%</div><div class="calc-zone-weight">${wt}<span class="calc-zone-weight-unit">${unit}</span></div><div class="calc-zone-reps">×${z.r}</div><div class="calc-zone-label">${z.l}</div></div>`}).join('');
+document.querySelectorAll('.calc-quick button').forEach(b=>b.classList.toggle('active',parseInt(b.dataset.reps)===r));
+}
+W.addEventListener('input',calc);
+R.addEventListener('input',calc);
+document.querySelectorAll('.calc-unit button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.calc-unit button').forEach(x=>x.classList.remove('active'));b.classList.add('active');unit=b.dataset.unit.toUpperCase();U.textContent=unit;calc()}));
+document.querySelectorAll('.calc-quick button').forEach(b=>b.addEventListener('click',()=>{R.value=b.dataset.reps;calc()}));
+calc();
+})();
+/* ============ END CALCULATOR LOGIC ============ */
+
 document.getElementById('coachingForm').addEventListener('submit',async function(e){
 e.preventDefault();
 const form=this;const btn=document.getElementById('formBtn');const budget=document.getElementById('budgetSelect').value;
 btn.textContent='Wird gesendet...';btn.disabled=true;
 try{
 const data=new FormData(form);
-
-/* 1. Send to Formspree (email notification for Vadim) */
 fetch('https://formspree.io/f/mjgpjqwl',{method:'POST',body:data,headers:{'Accept':'application/json'}});
-
-/* 2. Send to Brevo via our Vercel API (triggers automation based on BUDGET) */
 fetch('/api/submit-coaching',{
 method:'POST',
 headers:{'Content-Type':'application/json'},
@@ -350,7 +490,6 @@ challenge:form.challenge.value,
 budget:budget
 })
 });
-
 form.style.display='none';
 if(budget==='bis-100'){document.getElementById('successLow').style.display='block'}
 else if(budget==='100-250'){document.getElementById('successMid').style.display='block'}
@@ -358,7 +497,6 @@ else{document.getElementById('successHigh').style.display='block'}
 }catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false;console.error(err)}
 });
 
-/* WAITLIST FORM — AJAX via Vercel API */
 document.getElementById('waitlistForm').addEventListener('submit',async function(e){
 e.preventDefault();
 const form=this;const btn=form.querySelector('button');
@@ -369,7 +507,6 @@ method:'POST',
 headers:{'Content-Type':'application/json'},
 body:JSON.stringify({email:form.EMAIL.value})
 });
-
 form.style.display='none';
 document.getElementById('wlSuccess').style.display='block';
 }catch(err){btn.textContent='Fehler — nochmal versuchen';btn.disabled=false;console.error(err)}
